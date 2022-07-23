@@ -3,7 +3,6 @@ package api.mahasiswa.Models.Entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 @Table(name = "tbl_mahasiswa")
@@ -22,11 +21,11 @@ public class Mahasiswa implements Serializable {
     private String nama;
 
     @NotEmpty(message = "Alamat Mahasiswa Tidak Boleh Kosong")
-    @Column(name = "alamat_mahasiswa", length = 300)
+    @Column(name = "alamat_mahasiswa")
     private String alamat;
 
     @NotEmpty(message = "Tempat, dan Tanggal Lahir Tidak Boleh Kosong")
-    @Column(name = "ttl_mahasiswa", length = 300)
+    @Column(name = "ttl_mahasiswa")
     private String ttl;
 
     public Mahasiswa() {
