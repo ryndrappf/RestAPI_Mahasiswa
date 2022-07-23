@@ -1,6 +1,7 @@
 package api.mahasiswa.Models.Entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -12,16 +13,20 @@ public class Mahasiswa implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty(message = "NIM Mahasiswa Tidak Boleh Kosong")
     @Column(name = "nim_mahasiswa", length = 8)
     private String nim;
 
+    @NotEmpty(message = "Nama Mahasiswa Tidak Boleh Kosong")
     @Column(name = "nama_mahasiswa", length = 100)
     private String nama;
 
-    @Column(name = "alamat_mahasiswa", length = 255)
+    @NotEmpty(message = "Alamat Mahasiswa Tidak Boleh Kosong")
+    @Column(name = "alamat_mahasiswa", length = 300)
     private String alamat;
 
-    @Column(name = "ttl_mahasiswa", length = 255)
+    @NotEmpty(message = "Tempat, dan Tanggal Lahir Tidak Boleh Kosong")
+    @Column(name = "ttl_mahasiswa", length = 300)
     private String ttl;
 
     public Mahasiswa() {
